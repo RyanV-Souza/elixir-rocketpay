@@ -1,5 +1,5 @@
 defmodule Rocketpay.Users.CreateTest do
-  use Rocketpay.DataCase
+  use Rocketpay.DataCase, async: true
 
   alias Rocketpay.User
   alias Rocketpay.Users.Create
@@ -32,7 +32,6 @@ defmodule Rocketpay.Users.CreateTest do
         age: ["must be greater than or equal to 18"],
         password: ["can't be blank"]
       }
-
 
       {:error, changeset} = Create.call(params)
 
